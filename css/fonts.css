@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "Helveticalight";
+	src: url("../fonts/Helveticalight/Helveticalight.eot");
+	src: url("../fonts/Helveticalight/Helveticalight.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/Helveticalight/Helveticalight.woff") format("woff"),
+			 url("../fonts/Helveticalight/Helveticalight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "HelveticaRegular";
+	src: url("../fonts/HelveticaRegular/HelveticaRegular.eot");
+	src: url("../fonts/HelveticaRegular/HelveticaRegular.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+			 url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "ProximaNovaRegular";
+	src: url("../fonts/ProximaNovaRegular/ProximaNovaRegular.eot");
+	src: url("../fonts/ProximaNovaRegular/ProximaNovaRegular.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/ProximaNovaRegular/ProximaNovaRegular.woff") format("woff"),
+			 url("../fonts/ProximaNovaRegular/ProximaNovaRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}

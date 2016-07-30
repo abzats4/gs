@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Go SPOORT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="TrainersListCtrl">
+    <header class="top_nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li><span>Home</span></li>
+                        <li class="active"><span>Features</span></li>
+                        <li><span>Testimonials</span></li>
+                        <li><span>Contacts</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="top_headline">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <h2>Find Trainers to match your needs</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="results">
+        <div class="container">
+            <div class="row results_top_headline">
+                <div class="col-md-12">
+                    <div class="results_top_headline_counter">
+                        <div class="results_top_headline_counter_search">Search <img src="img/dot.png" alt=""></div>
+                        <div class="results_top_headline_counter_result">{{coaches}} coaches</div>
+                        <div> match your search</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row results_items">
+               <div class="col-md-8 empty"></div>
+                <div class="col-md-4 filters">
+                    <div class="filters_form">
+                        <h4>Location</h4>
+                        <label for="indoor"><input id="indoor" type="checkbox" ng-checked="true"><span></span>Indoor</label>
+                        <label for="outdoor"><input id="outdoor" type="checkbox"  ng-checked="true"><span></span>Outdoor</label>
+                        <div class="filters_form_line"></div>
+                        <h4>Sport Type</h4>
+                        <ul>
+                        	<li>
+								<label for="Crossfit"><span></span><input id="Crossfit" type="checkbox" ng-model="sportType.v1" ng-true-value="'Crossfit'" ng-false-value="''" ng-checked="master"><span></span>Crossfit</label>
+                        	</li>
+                        	<li>
+								<label for="Yoga"><input id="Yoga" type="checkbox" ng-model="sportType.v2" ng-true-value="'Yoga'" ng-false-value="''" ng-checked="master"><span></span>Yoga</label>
+                        	</li>
+                        	<li>
+								<label for="Fitness"><input id="Fitness" type="checkbox" ng-model="sportType.v3" ng-true-value="'Fitness'" ng-false-value="''" ng-checked="master"><span></span>Fitness</label>
+                        	</li>
+                        	<li>
+								<label for="Bodybuilding"><input id="Bodybuilding" type="checkbox" ng-model="sportType.v4" ng-true-value="'Bodybuilding'" ng-false-value="''" ng-checked="master"><span></span>Bodybuilding</label>
+                        	</li>
+                        	<li>
+								<label for="Core"><input id="Core" type="checkbox" ng-model="sportType.v5" ng-true-value="'Core'" ng-false-value="''" ng-checked="master"><span></span>Core</label>
+                        	</li>
+                        	<li>
+								<label for="Balance"><input id="Balance" type="checkbox" ng-model="sportType.v6" ng-true-value="'Balance'" ng-false-value="''" ng-checked="master"><span></span>Balance</label>
+                        	</li>
+                        	<li>
+								<label for="Power"><input id="Power" type="checkbox" ng-model="sportType.v7" ng-true-value="'Power'" ng-false-value="''" ng-checked="master"><span></span>Power</label>
+                        	</li>
+                        	<li>
+								<label for="CoreStrengt"><input id="CoreStrengt" type="checkbox" ng-model="sportType.v8" ng-true-value="'Core Strengt'" ng-false-value="''" ng-checked="master"><span></span>Core Strengt</label>
+                        	</li>
+                        </ul>
+                    </div>
+                    <div class="view_details" ng-show="details" ng-repeat="item in items | filter: trainer">
+					   <div class="view_details_close" ng-click="closeDetails()"><span class="glyphicon glyphicon-remove"></span></div>
+						<h3>{{item.name}}</h3>
+						<div class="view_details_photo"><img src="{{item.picture}}" alt=""></div>
+						<div class="view_details_about">{{item.about}}</div>
+						<ul>
+							<li>Gender: <span>{{item.gender}}</span></li>
+							<li>Age: <span>{{item.age}}</span></li>
+							<li>Favorite discipline: <span>{{item.favoriteDiscipline}}</span></li>
+							<li>Email: <span>{{item.email}}</span></li>
+							<li>Phone: <span>{{item.phone}}</span></li>
+							<li>Address: <span>{{item.address}}</span></li>
+							<li>Company: <span>{{item.company}}</span></li>
+							<li>Balance: <span>{{item.balance}}</span></li>
+							<li>Registered: <span>{{item.registered}}</span></li>
+						</ul>
+						<div class="view_details_isActive"></div>
+					</div>
+                </div>
+                <div class="col-md-12 top_dots">
+                    <div class="nav_dot_wrapper">
+                        <div ng-repeat="navDot in navDots(dotCounts)" ng-class="{'active':$first}" id="{{$index}}" ng-click="select($event)"></div>
+                    </div>
+                </div>
+                <div class="col-md-8 results_items_wrapper">
+                   
+                    <div class="item" ng-repeat="item in items | filter: sportType.v1 |filter: sportType.v2 |filter: sportType.v3 |filter: sportType.v4 |filter: sportType.v5 |filter: sportType.v6 |filter: sportType.v7 |filter: sportType.v8 | limitTo: 6: pageNumber ">
+                        <div class="item_photo">
+                            <img src="{{item.picture}}" alt="">
+                        </div>
+                        <div class="item_desr">
+                            <h3>{{item.name}}</h3>
+                            <p><span ng-repeat="discipline in item.discipline">{{discipline}}</span></p>
+                        </div>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-usd"></span>
+25$</li>
+                       <li><span class="glyphicon glyphicon-time"></span> 0:45</li>
+                        </ul>
+                        <div class="item_button" ng-click="viewDetails(item.name)">View details</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="nav_dot_wrapper">
+                        <div ng-repeat="navDot in navDots(dotCounts)" ng-class="{'active':$first}" id="{{$index}}" ng-click="select($event)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12">
+        			<ul>
+        				<li>Overview</li>
+        				<li class="active">Privacy policy</li>
+        				<li>Cookie policy</li>
+        				<li>Terms</li>
+        			</ul>
+        		</div>
+        		<div class="col-md-12 allRR">2016 companyname. All rights reserved.</div>
+        	</div>
+        </div>
+    </footer>
+</body>
+</html>

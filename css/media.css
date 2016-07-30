@@ -1,0 +1,144 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.item_desr p {
+		white-space: normal;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.container {
+		width: 100%;
+	}
+	.filters_form {
+		position: relative;
+		width: 100%;
+	}
+	.filters_form ul li {
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.view_details {
+		margin-top: 24px;
+		width: calc(100% - 30px);
+	}
+	.nav_dot_wrapper div {
+		width: 12px;
+		height: 12px;
+		margin: 6px 10px 2px;
+	}
+	.nav_dot_wrapper .active {
+		width: 16px;
+		height: 16px;
+	}
+	.top_dots {
+		display: block;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 500px) {
+	.container {
+    padding-right: 8px;
+    padding-left: 8px;
+	}
+	.top_nav {
+		line-height: 3em;
+	}
+	.top_nav ul {
+		text-align: center;
+		float: none;
+	}
+	.top_nav ul li {
+		display: inline-block;
+		float: none;
+		margin: 0 6px;
+		padding: 0;
+	}
+	.item {
+		width: 100%;
+		margin: 0 4% 15px 0;
+	}
+	footer {
+		margin-top: 35px;
+	}
+	footer ul li {
+		margin: 0 2px;
+	}
+	.filters_form ul li {
+		display: block;
+		margin-top: 4px;
+	}
+	.view_details {
+		margin: 0;
+		position: fixed;
+		height: 105vh;
+		padding-bottom: 30px;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow-y: scroll;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
